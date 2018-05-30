@@ -37,10 +37,13 @@ enum custom_keycodes {
 #define KC_XFER 0x8a
 #define KC_NFER 0x8b
 
+#define	KC_RAIS	MO(LAYER_RAISE)
+#define KC_LOWR	MO(LAYER_LOWER)
+
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
-  [_COLEMAK] = KC_KEYMAP(
+  [LAYER_COLEMAK] = KC_KEYMAP(
   //,----+----+----+----+----+----.              ,----+----+----+----+----+----.
      ESC , Q  , W  , F  , P  , G  ,                J  , L  , U  , Y  ,SCLN,MINS,
   //|----+----+----+----+----+----|              |----+----+----+----+----+----|
@@ -48,19 +51,33 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|----+----+----+----+----+----|              |----+----+----+----+----+----|
      BSPC, Z  , X  , C  , V  , B  ,                K  , M  ,COMM,DOT ,SLSH,ENT ,
   //|----+----+----+----+----+----+----.    ,----|----+----+----+----+----+----|
-     LEFT,DOWN,EISU,NFER,LOWR,LSFT,SPC ,     SPC ,RSFT,LOWR,XFER,HIRA,UP  ,RGHT,
+     LEFT,DOWN, UP ,RGHT,RAIS,LSFT,LCTL,     SPC ,RSFT,LOWR,    ,    ,    ,    ,
   //`----+----+----+--+-+----+----+----/    \----+----+----+----+----+----+----'
-                       LALT,RASE,LCTL,         RCTL,RASE,RGUI
+                       LGUI,LALT,NFER,         XFER,RALT,RGUI
   //                  `----+----+----'        `----+----+----'
   ),
 
-  [_LOWER] = KC_KEYMAP(
+  [LAYER_LOWER] = KC_KEYMAP(
   //,----+----+----+----+----+----.              ,----+----+----+----+----+----.
-     TILD,EXLM, AT ,HASH,DLR ,PERC,               CIRC,AMPR,ASTR,LPRN,RPRN,PLUS,
+     TILD,EXLM, AT ,HASH,DLR ,PERC,               CIRC,AMPR,ASTR,LBRC,RBRC,    ,
   //|----+----+----+----+----+----|              |----+----+----+----+----+----|
      GRV , 1  , 2  , 3  , 4  , 5  ,                6  , 7  , 8  , 9  , 0  ,EQL ,
   //|----+----+----+----+----+----|              |----+----+----+----+----+----|
-     F12 , F1 , F2 , F3 , F4 , F5 ,                F6 , F7 , F8 , F9 ,F10 ,F11 ,
+     DEL ,LCBR,RCBR,LPRN,RPRN,BSLS,               PIPE,LBRC,RBRC,MINS,PLUS,    ,
+  //|----+----+----+----+----+----+----.    ,----|----+----+----+----+----+----|
+     HOME,PGDN,PGUP,END ,    ,    ,    ,         ,    ,    ,    ,    ,    ,    ,
+  //`----+----+----+--+-+----+----+----/    \----+----+----+----+----+----+----'
+                           ,    ,    ,             ,    ,    
+  //                  `----+----+----'        `----+----+----'
+  ),
+
+  [LAYER_RAISE] = KC_KEYMAP(
+  //,----+----+----+----+----+----.              ,----+----+----+----+----+----.
+         , F1 , F2 , F3 , F4 , F5 ,               INS ,    ,BSPC,DEL ,    ,PSCR,
+  //|----+----+----+----+----+----|              |----+----+----+----+----+----|
+         , F6 , F7 , F8 , F9 , F10,               LEFT,DOWN, UP ,RGHT,    ,    ,
+  //|----+----+----+----+----+----|              |----+----+----+----+----+----|
+         , F11, F12,ZNHN,HIRA,EISU,               HOME,PGDN,PGUP,END ,    ,    ,
   //|----+----+----+----+----+----+----.    ,----|----+----+----+----+----+----|
          ,    ,    ,    ,    ,    ,    ,         ,    ,    ,    ,    ,    ,    ,
   //`----+----+----+--+-+----+----+----/    \----+----+----+----+----+----+----'
@@ -68,13 +85,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //                  `----+----+----'        `----+----+----'
   ),
 
-  [_RAISE] = KC_KEYMAP(
+  [LAYER_ADJUST] = KC_KEYMAP(
   //,----+----+----+----+----+----.              ,----+----+----+----+----+----.
-         ,    ,    ,LBRC,RBRC,    ,                   ,BSLS,BSPC,DEL ,INS ,PSCR,
+         ,    ,    ,    ,    ,    ,                   ,    ,    ,    ,    ,    ,
   //|----+----+----+----+----+----|              |----+----+----+----+----+----|
-         ,PLUS,EQL ,LCBR,RCBR,BSLS,               LEFT,DOWN, UP ,RGHT,    ,    ,
+         ,KLJP,KLUS,    ,    ,    ,    ,                   ,    ,    ,    ,    ,
   //|----+----+----+----+----+----|              |----+----+----+----+----+----|
-         ,MINS,UNDS,LPRN,RPRN,PIPE,               HOME,PGDN,PGUP,END ,    ,    ,
+         ,    ,    ,    ,    ,    ,                   ,    ,    ,    ,    ,    ,
   //|----+----+----+----+----+----+----.    ,----|----+----+----+----+----+----|
          ,    ,    ,    ,    ,    ,    ,         ,    ,    ,    ,    ,    ,    ,
   //`----+----+----+--+-+----+----+----/    \----+----+----+----+----+----+----'
