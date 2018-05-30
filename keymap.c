@@ -4,22 +4,16 @@
 
 extern keymap_config_t keymap_config;
 
-#define _COLEMAK 0
-#define _LOWER 1
-#define _RAISE 2
-#define _ADJUST 16
+#define LAYER_COLEMAK 	0
+#define LAYER_LOWER 	1
+#define LAYER_RAISE 	2
 
-enum custom_keycodes {
-  COLEMAK = SAFE_RANGE,
-  LOWER,
-  RAISE
-};
 
 #define KC_ KC_TRNS
 #define _______ KC_TRNS
 
-#define KC_LOWR LOWER
-#define KC_RASE RAISE
+#define KC_LOWR LT(LAYER_LOWER, KC_NFER)
+#define KC_RAIS LT(LAYER_RAISE, KC_XFER)
 #define KC_RST RESET
 #define KC_BL_S BL_STEP
 #define KC_DBUG DEBUG
@@ -37,9 +31,6 @@ enum custom_keycodes {
 #define KC_XFER 0x8a
 #define KC_NFER 0x8b
 
-#define	KC_RAIS	MO(LAYER_RAISE)
-#define KC_LOWR	MO(LAYER_LOWER)
-
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -51,15 +42,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|----+----+----+----+----+----|              |----+----+----+----+----+----|
      BSPC, Z  , X  , C  , V  , B  ,                K  , M  ,COMM,DOT ,SLSH,ENT ,
   //|----+----+----+----+----+----+----.    ,----|----+----+----+----+----+----|
-     LEFT,DOWN, UP ,RGHT,RAIS,LSFT,LCTL,     SPC ,RSFT,LOWR,    ,    ,    ,    ,
+     LEFT,DOWN, UP ,RGHT,LOWR,LSFT,LCTL,     SPC ,RSFT,RAIS,    ,    ,    ,    ,
   //`----+----+----+--+-+----+----+----/    \----+----+----+----+----+----+----'
-                       LGUI,LALT,NFER,         XFER,RALT,RGUI
+                       LALT,RAIS,NFER,         XFER,LOWR,RGUI
   //                  `----+----+----'        `----+----+----'
   ),
 
   [LAYER_LOWER] = KC_KEYMAP(
   //,----+----+----+----+----+----.              ,----+----+----+----+----+----.
-     TILD,EXLM, AT ,HASH,DLR ,PERC,               CIRC,AMPR,ASTR,LBRC,RBRC,    ,
+     TILD,EXLM, AT ,HASH,DLR ,PERC,               CIRC,AMPR,ASTR,LPRN,RPRN,PLUS,
   //|----+----+----+----+----+----|              |----+----+----+----+----+----|
      GRV , 1  , 2  , 3  , 4  , 5  ,                6  , 7  , 8  , 9  , 0  ,EQL ,
   //|----+----+----+----+----+----|              |----+----+----+----+----+----|
@@ -83,20 +74,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //`----+----+----+--+-+----+----+----/    \----+----+----+----+----+----+----'
                            ,    ,    ,             ,    ,    
   //                  `----+----+----'        `----+----+----'
-  ),
-
-  [LAYER_ADJUST] = KC_KEYMAP(
-  //,----+----+----+----+----+----.              ,----+----+----+----+----+----.
-         ,    ,    ,    ,    ,    ,                   ,    ,    ,    ,    ,    ,
-  //|----+----+----+----+----+----|              |----+----+----+----+----+----|
-         ,KLJP,KLUS,    ,    ,    ,    ,                   ,    ,    ,    ,    ,
-  //|----+----+----+----+----+----|              |----+----+----+----+----+----|
-         ,    ,    ,    ,    ,    ,                   ,    ,    ,    ,    ,    ,
-  //|----+----+----+----+----+----+----.    ,----|----+----+----+----+----+----|
-         ,    ,    ,    ,    ,    ,    ,         ,    ,    ,    ,    ,    ,    ,
-  //`----+----+----+--+-+----+----+----/    \----+----+----+----+----+----+----'
-                           ,    ,    ,             ,    ,    
-  //                  `----+----+----'        `----+----+----'
   )
 };
 
@@ -106,6 +83,7 @@ void persistent_default_layer_set(uint16_t default_layer) {
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+#if 0
   switch (keycode) {
 //    case QWERTY:
 //      if (record->event.pressed) {
@@ -142,5 +120,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 //      return false;
 //      break;
   }
+#endif
   return true;
 }
