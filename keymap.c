@@ -12,8 +12,8 @@ extern keymap_config_t keymap_config;
 #define KC_ KC_TRNS
 #define _______ KC_TRNS
 
-#define KC_LOWR LT(LAYER_LOWER, KC_NFER)
-#define KC_RAIS LT(LAYER_RAISE, KC_XFER)
+#define KC_LOWR MO(LAYER_LOWER)
+#define KC_RAIS MO(LAYER_RAISE)
 #define KC_RST RESET
 #define KC_BL_S BL_STEP
 #define KC_DBUG DEBUG
@@ -30,6 +30,9 @@ extern keymap_config_t keymap_config;
 #define KC_HIRA 0x88
 #define KC_XFER 0x8a
 #define KC_NFER 0x8b
+#define KC_xxxx KC_NO
+
+
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -42,21 +45,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|----+----+----+----+----+----|              |----+----+----+----+----+----|
      BSPC, Z  , X  , C  , V  , B  ,                K  , M  ,COMM,DOT ,SLSH,ENT ,
   //|----+----+----+----+----+----+----.    ,----|----+----+----+----+----+----|
-     LEFT,DOWN, UP ,RGHT,LOWR,LSFT,LCTL,     SPC ,RSFT,RAIS,    ,    ,    ,    ,
+     LEFT,DOWN, UP ,RGHT,LOWR,LSFT,LCTL,     SPC ,RSFT,RAIS,RCTL,RGUI,xxxx,xxxx,
   //`----+----+----+--+-+----+----+----/    \----+----+----+----+----+----+----'
-                       LALT,RAIS,NFER,         XFER,LOWR,RGUI
+                       LALT,NFER,xxxx,         xxxx,XFER,RALT
   //                  `----+----+----'        `----+----+----'
   ),
 
   [LAYER_LOWER] = KC_KEYMAP(
   //,----+----+----+----+----+----.              ,----+----+----+----+----+----.
-     TILD,EXLM, AT ,HASH,DLR ,PERC,               CIRC,AMPR,ASTR,LPRN,RPRN,PLUS,
+     TILD,EXLM, AT ,HASH,DLR ,PERC,               CIRC,AMPR,ASTR,PLUS,COLN,UNDS,
   //|----+----+----+----+----+----|              |----+----+----+----+----+----|
-     GRV , 1  , 2  , 3  , 4  , 5  ,                6  , 7  , 8  , 9  , 0  ,EQL ,
+     GRV , 1  , 2  , 3  , 4  , 5  ,                6  , 7  , 8  , 9  , 0  ,DQUO,
   //|----+----+----+----+----+----|              |----+----+----+----+----+----|
-     DEL ,LCBR,RCBR,LPRN,RPRN,BSLS,               PIPE,LBRC,RBRC,MINS,PLUS,    ,
+     DEL ,LCBR,RCBR,LPRN,RPRN,BSLS,               PIPE,EQL , LT , GT ,QUES,    ,
   //|----+----+----+----+----+----+----.    ,----|----+----+----+----+----+----|
-     HOME,PGDN,PGUP,END ,    ,    ,    ,         ,    ,    ,    ,    ,    ,    ,
+     xxxx,xxxx,LBRC,RBRC,    ,    ,    ,         ,    ,    ,    ,    ,    ,    ,
   //`----+----+----+--+-+----+----+----/    \----+----+----+----+----+----+----'
                            ,    ,    ,             ,    ,    
   //                  `----+----+----'        `----+----+----'
@@ -64,11 +67,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [LAYER_RAISE] = KC_KEYMAP(
   //,----+----+----+----+----+----.              ,----+----+----+----+----+----.
-         , F1 , F2 , F3 , F4 , F5 ,               INS ,    ,BSPC,DEL ,    ,PSCR,
+     xxxx, F1 , F2 , F3 , F4 , F5 ,               INS ,xxxx,BSPC,DEL ,xxxx,PSCR,
   //|----+----+----+----+----+----|              |----+----+----+----+----+----|
-         , F6 , F7 , F8 , F9 , F10,               LEFT,DOWN, UP ,RGHT,    ,    ,
+     xxxx, F6 , F7 , F8 , F9 , F10,               LEFT,DOWN, UP ,RGHT,xxxx,xxxx,
   //|----+----+----+----+----+----|              |----+----+----+----+----+----|
-         , F11, F12,ZNHN,HIRA,EISU,               HOME,PGDN,PGUP,END ,    ,    ,
+     xxxx, F11, F12,ZNHN,HIRA,EISU,               HOME,PGDN,PGUP,END ,xxxx,    ,
   //|----+----+----+----+----+----+----.    ,----|----+----+----+----+----+----|
          ,    ,    ,    ,    ,    ,    ,         ,    ,    ,    ,    ,    ,    ,
   //`----+----+----+--+-+----+----+----/    \----+----+----+----+----+----+----'
