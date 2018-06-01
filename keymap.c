@@ -45,21 +45,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|----+----+----+----+----+----|              |----+----+----+----+----+----|
      BSPC, Z  , X  , C  , V  , B  ,                K  , M  ,COMM,DOT ,SLSH,ENT ,
   //|----+----+----+----+----+----+----.    ,----|----+----+----+----+----+----|
-     LEFT,DOWN, UP ,RGHT,LOWR,LSFT,LCTL,     SPC ,RSFT,RAIS,RCTL,RGUI,xxxx,xxxx,
+     LEFT,DOWN, UP ,RGHT,LOWR,LSFT,SPC ,     SPC ,RSFT,LOWR,RGUI,xxxx,xxxx,xxxx,
   //`----+----+----+--+-+----+----+----/    \----+----+----+----+----+----+----'
-                       LALT,NFER,xxxx,         xxxx,XFER,RALT
+                       NFER,LCTL,LALT,         RALT,RCTL,XFER
   //                  `----+----+----'        `----+----+----'
   ),
 
   [LAYER_LOWER] = KC_KEYMAP(
   //,----+----+----+----+----+----.              ,----+----+----+----+----+----.
-     TILD,EXLM, AT ,HASH,DLR ,PERC,               CIRC,AMPR,ASTR,PLUS,COLN,UNDS,
+     TILD,EXLM, AT ,HASH,DLR ,PERC,               CIRC,AMPR,ASTR,LPRN,RPRN,UNDS,
   //|----+----+----+----+----+----|              |----+----+----+----+----+----|
      GRV , 1  , 2  , 3  , 4  , 5  ,                6  , 7  , 8  , 9  , 0  ,DQUO,
   //|----+----+----+----+----+----|              |----+----+----+----+----+----|
-     DEL ,LCBR,RCBR,LPRN,RPRN,BSLS,               PIPE,EQL , LT , GT ,QUES,    ,
+     DEL ,PIPE,LCBR,RCBR,BSLS,xxxx,               xxxx,PLUS,MINS,EQL ,QUES,xxxx,
   //|----+----+----+----+----+----+----.    ,----|----+----+----+----+----+----|
-     xxxx,xxxx,LBRC,RBRC,    ,    ,    ,         ,    ,    ,    ,    ,    ,    ,
+     HOME,PGDN,PGUP,END ,    ,    ,    ,         ,    ,    ,    ,    ,    ,    ,
   //`----+----+----+--+-+----+----+----/    \----+----+----+----+----+----+----'
                            ,    ,    ,             ,    ,    
   //                  `----+----+----'        `----+----+----'
