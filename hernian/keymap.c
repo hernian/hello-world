@@ -77,9 +77,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // |-----+-----+-----+-----+-----+-----|             |-----+-----+-----+-----+-----+-----|
      BSPC,  Z  ,  X  ,  C  ,  V  ,  B  ,                K  ,  M  , COMM, DOT , SLSH, ENT ,        \
 // |-----+-----+-----+-----+-----+-----+-----. ,-----+-----+-----+-----+-----+-----+-----|
-     LEFT, DOWN,  UP , DOWN, LOWR, LSFT, SPC ,    SPC, RSFT, LOWR, XXXX, XXXX, XXXX, XXXX,        \
+     LEFT, RGHT,  UP , RGHT, LOWR, LSFT, SPC ,    SPC, RSFT, LOWR, XXXX, XXXX, XXXX, XXXX,        \
 // |-----+-----+-----+-----+-----+-----+-----| |-----+-----+-----+-----+-----+-----+-----'
-                 LGUI, LALT, NFER, RASE, LCTL,   RCTL, RASE, XFER, RALT, RGUI                     \
+                 DOWN, LALT, NFER, RASE, LCTL,   RCTL, RASE, XFER, RALT, RGUI                     \
 //             `-----+-----+-----+-----+-----' `-----+-----+-----+-----+-----'
   ),
 
@@ -89,7 +89,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // |-----+-----+-----+-----+-----+-----|             |-----+-----+-----+-----+-----+-----|
      GRV ,  1  ,  2  ,  3  ,  4  ,  5  ,                6  ,  7  ,  8  ,  9  ,  0  , DQUO, XXXX,  \
 // |-----+-----+-----+-----+-----+-----|             |-----+-----+-----+-----+-----+-----|
-     DEL , LBRC, RBRC, LCBR, RCBR, PIPE,               PLUS, MINS,  LT ,  GT , QUES,     ,        \
+     DEL , LBRC, RBRC, LCBR, RCBR, PIPE,               PLUS, MINS, COMM, DOT , SLSH ,     ,        \
 // |-----+-----+-----+-----+-----+-----+-----. ,-----+-----+-----+-----+-----+-----+-----|
      HOME, PGDN, PGUP, END ,     ,     ,     ,   BSLS, EQL ,     ,     ,     ,     ,     ,        \
 // |-----+-----+-----+-----+-----+-----+-----| |-----+-----+-----+-----+-----+-----+-----'
