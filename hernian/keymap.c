@@ -77,7 +77,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // |-----+-----+-----+-----+-----+-----|             |-----+-----+-----+-----+-----+-----|
      BSPC,  Z  ,  X  ,  C  ,  V  ,  B  ,                K  ,  M  , COMM, DOT , SLSH, ENT ,        \
 // |-----+-----+-----+-----+-----+-----+-----. ,-----+-----+-----+-----+-----+-----+-----|
-     LEFT, RGHT,  UP , RGHT, LOWR, LSFT, SPC ,    SPC, RSFT, LOWR, XXXX, XXXX, XXXX, XXXX,        \
+     LEFT, RGHT,  UP , NFER, LOWR, LSFT, SPC ,    SPC, RSFT, LOWR, XFER, XXXX, XXXX, XXXX,        \
 // |-----+-----+-----+-----+-----+-----+-----| |-----+-----+-----+-----+-----+-----+-----'
                  DOWN, LALT, NFER, RASE, LCTL,   RCTL, RASE, XFER, RALT, RGUI                     \
 //             `-----+-----+-----+-----+-----' `-----+-----+-----+-----+-----'
@@ -85,15 +85,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [LAYER_LOWER] = HERNIAN_KEYMAP( \
 // ,-----------------------------------.             ,-----------------------------------.
-     TILD, EXLM,  AT , HASH, DLR , PERC,               CIRC, AMPR, ASTR, LPRN, RPRN, UNDS, XXXX,  \
+     GRV , EXLM,  AT , HASH, DLR , PERC,               CIRC, AMPR, ASTR, LPRN, RPRN, PIPE, XXXX,  \
 // |-----+-----+-----+-----+-----+-----|             |-----+-----+-----+-----+-----+-----|
-     GRV ,  1  ,  2  ,  3  ,  4  ,  5  ,                6  ,  7  ,  8  ,  9  ,  0  , DQUO, XXXX,  \
+     TILD,  1  ,  2  ,  3  ,  4  ,  5  ,                6  ,  7  ,  8  ,  9  ,  0  , BSLS, XXXX,  \
 // |-----+-----+-----+-----+-----+-----|             |-----+-----+-----+-----+-----+-----|
-     DEL , LBRC, RBRC, LCBR, RCBR, PIPE,               PLUS, MINS, COMM, DOT , SLSH ,     ,        \
+     DEL , LBRC, RBRC, LCBR, RCBR, EQL ,               PLUS, MINS, COMM, DOT , SLSH ,     ,        \
 // |-----+-----+-----+-----+-----+-----+-----. ,-----+-----+-----+-----+-----+-----+-----|
-     HOME, PGDN, PGUP, END ,     ,     ,     ,   BSLS, EQL ,     ,     ,     ,     ,     ,        \
+     HOME, END , PGUP,     ,     ,     ,     ,       ,     ,     ,     ,     ,     ,     ,        \
 // |-----+-----+-----+-----+-----+-----+-----| |-----+-----+-----+-----+-----+-----+-----'
-                     ,     ,     ,     ,     ,       ,     ,     ,     ,                          \
+                 PGDN,     ,     ,     ,     ,       ,     ,     ,     ,                          \
 //             `-----+-----+-----+-----+-----' `-----+-----+-----+-----+-----'
   ),
 
